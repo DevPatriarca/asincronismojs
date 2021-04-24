@@ -7,6 +7,7 @@
     "callback": "node src/callback/index.js",
     "callback:challenge": "node src/callback/challenge.js",
     "promise": "node src/promise/index.js",
+    "test1": "node src/promise/pokeapi.js",
     "promise:challenge": "node src/promise/challenge.js"
   },
   "keywords": [],
