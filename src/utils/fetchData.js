@@ -1,3 +1,4 @@
+//Aquí se crea la función para utilizarla en promesas.
 // Se crea una nueva carpeta (utils) y se convierte el código a ES6 para poder utilizar la función fetchData dentro de challenge.js
 let XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest; // Instanciar la dependencia XMLHttpRequest. Se usa el ".XMLHttpRequest" para utilizar la propiedad de hacer llamados a una API desde JS
 
@@ -8,8 +9,8 @@ const fetchData = (url_api) => { // La función fetchData se vuelve una arrow fu
         xhttp.onreadystatechange = (() => { // Se escucha lo que va hacer la conexión (si este cambio sucede, se ejecuta la función)
             if(xhttp.readyState === 4) { // Se hace la validación, el valor 4 se refiere a que la petición ha sido completada. Se valida el status del llamado
                 (xhttp.status === 200) // Se utiliza el operador ternario (? :)
-                ? resolve(JSON.parse(xhttp.responseText))
-                : reject(new Error('Error ', url_api))
+                ? resolve(JSON.parse(xhttp.responseText)) // Se parsea la respuesta
+                : reject(new Error('Error ', url_api)) // Se manda el error (arroja info del error)
             }
         });
         xhttp.send(); // Se envía la solicitud
